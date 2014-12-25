@@ -12,5 +12,8 @@ server.on('listening', function(){
 });
 
 server.on('request', function(req, res){
+    var x = require('url').parse(req.url, true);
+    console.log(x);
+
     console.log('Request', req.method, req.url);
 });
