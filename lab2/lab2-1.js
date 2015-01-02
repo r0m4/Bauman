@@ -2,13 +2,14 @@ var http = require('http');
 
 var server = http.createServer().listen(8080, function(){console.log("listening on 8080... ")});
 
-server.on('close', function(){
+server.on('close', function(req){
     console.log("the end");
+    
 });
 
 server.on('request', function(req, res) {
     if (req.url == '/stop') {
-        req.connection.destroy();
+        
         server.close();
     } else {
         res.writeHead(200, {'Content-type' : "text/plain; charset=utf-8"});
