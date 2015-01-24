@@ -5,7 +5,7 @@ console.log("logs required");
 var http = require('http');
 console.log("http required");
 
-console.log('starting bulding server...');
+console.log('starting build server...');
 http.createServer(function(req, res) {
     console.log('first step');
     msg.info("Download start");

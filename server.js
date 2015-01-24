@@ -1,18 +1,28 @@
 var http = require('http');
+var url = require('url');
 
 http.createServer(function (req, res) {
-    console.log('Server listen');
-    res.writeHead(200);
-    req.on('data', function(data,err){
-        if(err){console.log(err)};
-        console.log('Request: ', data.toString());
-        res.write('Write: ' + data.toString());
-    });
-    req.on('end', function(){
-        console.log('The end');
-    });
-
+    var data = '';
+    var input = url.parse(req.url);
     
+    if(input.query){
+        var q = input.query.split('=');
+        console.log(q);
+        switch(q[1].toLowerCase()){
+            case 'john' : 
+            data = '[{"name":"John Smith", "age" : 25, "admin" : true}]'; break;
+            case 'mike' : 
+            data = '[{"name":"Mike Doe", "age" : 33, "admin" : false}]'; break;
+            default : 
+            data = '[{"name":"Unknown user", "age" : 0, "admin" : false}]'; break;
+        
+        }
+    }
+       
+
+    res.writeHead(200, {"Content-Type": "application/json"});
+    res.write(data.toString());
     res.end();
 
-}).listen(8080, function (){console.log("listening");});
+}).listen(8081, function (){console.log("listening");});
+
