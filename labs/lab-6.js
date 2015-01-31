@@ -9,8 +9,8 @@
 					"version": "1.0.0",
 					"description": "My first Node.js chat",
 					"dependencies": {
-							"socket.io": "latest",
-							"express": "latest",
+							"socket.io": 0.9,
+							"express": 3.5.0",
 							"jade": "latest"
 					},
 					"author": "Ваше имя"
@@ -24,7 +24,7 @@
 		
 		1. В текстовом редакторе создайте файл 'chat\tpl\page.jade'
 		2. В созданном файле напишите следующий текст:
-			!!!
+			doctype
 			html
 				head
 					title= "Node chat"
