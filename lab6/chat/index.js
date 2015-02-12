@@ -12,13 +12,16 @@ app.get("/", function(req, res){
 });
 
 var users = {};
+
 function getUsers(obj){
     var tmp = [];
     for(var i in obj){
         tmp.push(obj[i]);
-        return tmp.join(', ');
     }
+    return tmp.join(', ');
 }
+
+
 
 io.sockets.on("connection", function(client){
     //client.emit('message', {message: "Добро пожаловать в чат"});
