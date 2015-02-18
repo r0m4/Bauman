@@ -4,5 +4,6 @@
     "log-level": "dev",
     "app-view": "views",
     "app-engine": "ejs",
-    "app-static": "public"
+    "app-static": "public",
+    "db-cnn": "mongodb://localhost/site"
 }
