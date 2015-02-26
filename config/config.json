@@ -5,5 +5,14 @@
     "app-view": "views",
     "app-engine": "ejs",
     "app-static": "public",
-    "db-cnn": "mongodb://localhost/site"
+    "db-cnn": "mongodb://localhost/site",
+    "session":{
+        "secret":"MySecretWord",
+        "key": "NODESESSID",
+        "cookie": {
+            "path": "/",
+            "maxAge": null,
+            "httpOnly": true
+        }
+    }
 }

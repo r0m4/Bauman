@@ -1,4 +1,16 @@
- 
+var User = require('./site/schema/user').User;
+
+var admin = new User({
+  name: 'root',
+  password: 'pass@word1'
+});
+
+admin.save(function(err){
+  if(err) {console.dir(err)};
+});
+
+
+ /*
  var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 
@@ -23,7 +35,7 @@ tuzik.save(function (err) {
   else 
     tuzik.say();
 });
-
+*/
 
 
  /*
